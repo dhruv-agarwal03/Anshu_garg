@@ -1,367 +1,290 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sky Reach Media | Anshu Garg</title>
-  <link rel="icon" type="image/jpeg" href="logo.jpeg">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="logo.jpeg" type="image/jpeg">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/42e6fcb5f8.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
-    /* === Visual theme (inspired by flixier) === */
-    :root{
-      --grad-1: #6c5ce7;
-      --grad-2: #00b4d8;
-      --card-blur: rgba(255,255,255,0.6);
+    body {
+      background: #061021;
+      color: white;
+      padding-top: 70px;
     }
-
-    body{ background: linear-gradient(180deg,#0f172a 0%, #0b1220 60%); color:#0b1220; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-
-    /* Override tailwind for hero text on dark gradient */
-    .hero-grad { background: linear-gradient(135deg,var(--grad-1), var(--grad-2)); }
-    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.06); }
-
-    /* Video area */
-    .main-video { width:100%; height:520px; max-height:60vh; border-radius:12px; background:#000; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-    .main-video video{ width:100%; height:100%; object-fit:contain; display:block; }
-
-    .thumb { width:160px; height:90px; border-radius:8px; overflow:hidden; background:#000; cursor:pointer; flex:0 0 auto; }
-    .thumb video{ width:100%; height:100%; object-fit:cover; display:block; }
-
-    /* small screens */
-    @media (max-width:768px){
-      .main-video{ height:46vh; }
-      .thumb{ width:120px; height:72px; }
+    .hero {
+      background: linear-gradient(135deg, #6c5ce7, #00b4d8);
+      border-radius: 12px;
+      padding: 60px 20px;
+      color: white;
+      text-align: center;
     }
-
-    /* subtle animations */
-    .fade-in { animation: fadeIn .6s ease both; }
-    @keyframes fadeIn{ from{opacity:0; transform: translateY(10px);} to{opacity:1; transform:none;} }
+    .about-img {
+      border-radius: 12px;
+      width: 100%;
+      max-width: 350px;
+    }
+    .swiper-slide video, 
+    .swiper-slide blockquote {
+      width: 100%;
+      max-height: 280px; /* smaller height */
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .faq-question {
+      background: #0d1b2a;
+      color: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .faq-answer {
+      display: none;
+      padding: 10px;
+      color: #bbb;
+    }
   </style>
 </head>
-<body class="antialiased">
+<body>
 
-  <!-- NAV -->
-  <header class="fixed w-full z-50 top-0">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between glass">
-      <a href="#" class="flex items-center gap-3">
-        <!-- Replace logo.jpeg -->
-        <img src="logo.jpeg" alt="Sky Reach Media" class="h-10 w-10 rounded-md object-cover shadow" />
-        <div>
-          <div class="text-white font-extrabold text-xl">Sky Reach Media</div>
-          <div class="text-xs text-white/60 -mt-1">Video Editor & Strategist</div>
-        </div>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-8 text-white/90">
-        <a href="#about" class="hover:text-white transition">About</a>
-        <a href="#services" class="hover:text-white transition">Services</a>
-        <a href="#feedback" class="hover:text-white transition">Feedback</a>
-        <a href="#faq" class="hover:text-white transition">FAQ</a>
-        <a href="#contact" class="hover:text-white transition">Contact</a>
-      </nav>
-
-      <div class="md:hidden">
-        <button id="menu-btn" class="text-white text-2xl"><i class="fas fa-bars"></i></button>
-      </div>
+<!-- NAV -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Sky Reach Media</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reels">Reels</a></li>
+        <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
     </div>
+  </div>
+</nav>
 
-    <!-- mobile menu -->
-    <div id="mobile-menu" class="hidden bg-white/5 backdrop-blur-md border-t border-white/6">
-      <div class="px-6 py-3 flex flex-col text-white/90">
-        <a href="#about" class="py-2">About</a>
-        <a href="#services" class="py-2">Services</a>
-        <a href="#feedback" class="py-2">Feedback</a>
-        <a href="#faq" class="py-2">FAQ</a>
-        <a href="#contact" class="py-2">Contact</a>
-      </div>
+<!-- HERO -->
+<section class="hero container my-4" data-aos="fade-up">
+  <h1 class="fw-bold">Grow with <span class="text-warning">Sky Reach Media</span></h1>
+  <p class="lead">I’m <strong>Anshu Garg</strong> — I create scroll-stopping edits, viral reels and data-driven strategies.</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="container my-5">
+  <div class="row align-items-center g-4">
+    <div class="col-md-5 text-center" data-aos="zoom-in">
+      <img src="img1.jpeg" alt="Anshu Garg" class="about-img shadow">
     </div>
-  </header>
+    <div class="col-md-7" data-aos="fade-left">
+      <h2 class="fw-bold">About Me</h2>
+      <p>
+        Hi, I’m <strong>Anshu Garg</strong>, founder of <em>Sky Reach Media</em>. I specialize in video editing, Instagram reel creation, 
+        and social media growth strategies. My passion is turning raw clips into powerful stories that engage and grow your audience.
+      </p>
+      <a href="#contact" class="btn btn-warning">Work with Me</a>
+    </div>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero-grad min-h-screen flex items-center" style="padding-top:88px;">
-    <div class="max-w-7xl mx-auto px-6 w-full">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div class="text-white space-y-6">
-          <div class="inline-block px-3 py-1 rounded-full bg-white/10 text-sm font-semibold">Video Editor • Content Strategist</div>
-          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Grow with <span class="block text-yellow-300">Sky Reach Media</span></h1>
-          <p class="text-lg md:text-xl text-white/90 max-w-xl">I’m <strong>Anshu Garg</strong> — I create scroll-stopping edits, viral reels and data-led social strategies for creators and brands.</p>
-          <div class="flex gap-4 mt-6">
-            <a href="#contact" class="px-6 py-3 rounded-full bg-white text-slate-900 font-semibold shadow hover:scale-105 transition">Work with me</a>
-            <a href="#services" class="px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/6 transition">See services</a>
-          </div>
+<!-- REELS SLIDER -->
+<section id="reels" class="container my-5">
+  <h3 class="text-center mb-4">Instagram Reels Edited by Anshu</h3>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DOFpOH2EeB4/" data-instgrm-version="14"></blockquote></div>
+      <div class="swiper-slide"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNFTijxJmXy/" data-instgrm-version="14"></blockquote></div>
+      <div class="swiper-slide"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DJ1KdEIJTiI/" data-instgrm-version="14"></blockquote></div>
+      <div class="swiper-slide"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DN5MIS6CTsl/" data-instgrm-version="14"></blockquote></div>
+      <div class="swiper-slide"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DLhtm23zHzT/" data-instgrm-version="14"></blockquote></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
 
-          <div class="mt-8 flex gap-4 items-center">
-            <div class="text-white/80">
-              <div class="font-bold text-2xl">150+</div>
-              <div class="text-sm">Women Mentored</div>
-            </div>
-            <div class="h-10 w-px bg-white/10"></div>
-            <div class="text-white/80">
-              <div class="font-bold text-2xl">1M+</div>
-              <div class="text-sm">Reel views</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- hero mockup - main video preview -->
-        <div class="relative">
-          <div class="main-video rounded-xl shadow-2xl">
-            <!-- Main video element (replace feedback1.mp4) -->
-            <video id="mainVideo" controls playsinline>
+<section id="feedback" class="container my-5">
+  <h3 class="text-center mb-4" data-aos="fade-up">Client Feedback</h3>
+  <div id="feedbackCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="row g-3">
+          <div class="col-md-4" data-aos="zoom-in">
+            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
               <source src="feedback1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
             </video>
           </div>
-
-          <!-- thumbnails row -->
-          <div class="mt-4 flex gap-3 overflow-x-auto py-2">
-            <!-- Thumbnails: use same file names (feedback1..9) or replace -->
-            <!-- JS will hook .thumb-button elements -->
-            <div class="thumb thumb-button" data-src="feedback1.mp4" title="Feedback 1">
-              <video muted preload="metadata"><source src="feedback1.mp4" type="video/mp4"></video>
-            </div>
-            <div class="thumb thumb-button" data-src="feedback2.mp4" title="Feedback 2">
-              <video muted preload="metadata"><source src="feedback2.mp4" type="video/mp4"></video>
-            </div>
-            <div class="thumb thumb-button" data-src="feedback3.mp4" title="Feedback 3">
-              <video muted preload="metadata"><source src="feedback3.mp4" type="video/mp4"></video>
-            </div>
-            <div class="thumb thumb-button" data-src="feedback4.mp4" title="Feedback 4">
-              <video muted preload="metadata"><source src="feedback4.mp4" type="video/mp4"></video>
-            </div>
-            <div class="thumb thumb-button" data-src="feedback5.mp4" title="Feedback 5">
-              <video muted preload="metadata"><source src="feedback5.mp4" type="video/mp4"></video>
-            </div>
-            <div class="thumb thumb-button" data-src="feedback6.mp4" title="Feedback 6">
-              <video muted preload="metadata"><source src="feedback6.mp4" type="video/mp4"></video>
-            </div>
-            <div class="thumb thumb-button" data-src="feedback7.mp4" title="Feedback 7">
-              <video muted preload="metadata"><source src="feedback7.mp4" type="video/mp4"></video>
-            </div>
-            <div class="thumb thumb-button" data-src="feedback8.mp4" title="Feedback 8">
-              <video muted preload="metadata"><source src="feedback8.mp4" type="video/mp4"></video>
-            </div>
-            <div class="thumb thumb-button" data-src="feedback9.mp4" title="Feedback 9">
-              <video muted preload="metadata"><source src="feedback9.mp4" type="video/mp4"></video>
-            </div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
+              <source src="feedback2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
+              <source src="feedback3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="row g-3">
+          <div class="col-md-4" data-aos="zoom-in">
+            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
+              <source src="feedback4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
+              <source src="feedback5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
+              <source src="feedback6.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="row g-3">
+          <div class="col-md-4" data-aos="zoom-in">
+            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
+              <source src="feedback7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
+              <source src="feedback8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
+              <source src="feedback9.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    <button class="carousel-control-prev" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-20">
-    <div class="max-w-6xl mx-auto px-6 bg-white rounded-xl -mt-24 shadow-xl glass" style="padding:34px;">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <img src="img1.jpeg" alt="Anshu Garg" class="rounded-xl w-full object-cover shadow-md" />
-        <div>
-          <h3 class="text-2xl font-bold text-slate-900">About Anshu Garg</h3>
-          <p class="mt-4 text-slate-700">Hi — I’m Anshu. I make edits, scripts and strategies that convert viewers into followers. Worked with creators to reach millions of views. I specialise in short-form content and performance-driven editing.</p>
-          <ul class="mt-4 text-slate-700 space-y-2">
-            <li>• Viral Reels & Shorts</li>
-            <li>• Brand-facing edits & ads</li>
-            <li>• Content strategy & scripts</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- FAQ -->
+<section id="faq" class="container my-5">
+  <h3 class="text-center mb-4">Frequently Asked Questions</h3>
+  <div class="faq-question">💡 What services do you offer?</div>
+  <div class="faq-answer">I offer video editing, Instagram reels, social media strategies, and content creation.</div>
 
-  <!-- SERVICES -->
-  <section id="services" class="py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-white text-3xl font-bold mb-8">Services</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl p-6 shadow hover:shadow-2xl transition">
-          <div class="text-2xl font-bold text-slate-900">Video Editing</div>
-          <p class="mt-3 text-slate-600">Fast, creative edits for reels, shorts & ads.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow hover:shadow-2xl transition">
-          <div class="text-2xl font-bold text-slate-900">Content Strategy</div>
-          <p class="mt-3 text-slate-600">Ideas + posting playbooks that grow accounts.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow hover:shadow-2xl transition">
-          <div class="text-2xl font-bold text-slate-900">Script Writing</div>
-          <p class="mt-3 text-slate-600">Short, hooky scripts optimised for retention.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="faq-question">⏱️ How long does it take to edit a video?</div>
+  <div class="faq-answer">Depending on length and complexity, typically 1-3 days.</div>
 
-  <!-- FEEDBACK CAROUSEL (compact) -->
-  <section class="py-12">
-    <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-white text-2xl font-bold mb-6">Client Feedback</h3>
+  <div class="faq-question">💰 What are your charges?</div>
+  <div class="faq-answer">Pricing depends on the project scope. DM me for a custom quote.</div>
+</section>
 
-      <!-- Simple horizontal swiper for testimonials (uses Swiper library) -->
-      <div class="swiper testimonialSwiper rounded-xl">
-        <div class="swiper-wrapper">
-          <!-- Replace thumbnails with real testimonial videos or short clips -->
-          <!-- Using same feedback files for demo -->
-          <div class="swiper-slide bg-white p-4 rounded-xl shadow">
-            <video controls class="w-full h-48 object-contain rounded-md"><source src="feedback1.mp4" type="video/mp4"></video>
-            <p class="mt-3 text-slate-700 font-semibold">Riya — Creator</p>
-            <p class="text-sm text-slate-500">"Amazing edits. Views skyrocketed."</p>
-          </div>
-
-          <div class="swiper-slide bg-white p-4 rounded-xl shadow">
-            <video controls class="w-full h-48 object-contain rounded-md"><source src="feedback2.mp4" type="video/mp4"></video>
-            <p class="mt-3 text-slate-700 font-semibold">Priya — Small Biz</p>
-            <p class="text-sm text-slate-500">"Fast, professional and friendly."</p>
-          </div>
-
-          <div class="swiper-slide bg-white p-4 rounded-xl shadow">
-            <video controls class="w-full h-48 object-contain rounded-md"><source src="feedback3.mp4" type="video/mp4"></video>
-            <p class="mt-3 text-slate-700 font-semibold">Ankit — Brand</p>
-            <p class="text-sm text-slate-500">"Great creative direction."</p>
-          </div>
-        </div>
-
-        <div class="swiper-button-next text-white"></div>
-        <div class="swiper-button-prev text-white"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="py-12">
-    <div class="max-w-5xl mx-auto px-6">
-      <h3 class="text-white text-2xl font-bold mb-6">FAQ</h3>
-      <div class="space-y-4">
-        <div class="faq-item bg-white rounded-xl p-4 shadow">
-          <button class="faq-q w-full flex items-center gap-3 text-slate-800 text-left">
-            <i class="fas fa-question-circle text-blue-600"></i>
-            <span class="font-semibold">How much do your services cost?</span>
-            <i class="fas fa-chevron-down ml-auto text-slate-500 transition-transform"></i>
-          </button>
-          <div class="faq-a mt-3 text-slate-600" style="max-height:0; overflow:hidden; transition: all .45s ease;">
-            Pricing depends on scope — small reels start at X, packages available for consistent creators. Contact for a quote.
-          </div>
-        </div>
-
-        <div class="faq-item bg-white rounded-xl p-4 shadow">
-          <button class="faq-q w-full flex items-center gap-3 text-slate-800 text-left">
-            <i class="fas fa-clock text-purple-600"></i>
-            <span class="font-semibold">How long does delivery take?</span>
-            <i class="fas fa-chevron-down ml-auto text-slate-500 transition-transform"></i>
-          </button>
-          <div class="faq-a mt-3 text-slate-600" style="max-height:0; overflow:hidden; transition: all .45s ease;">
-            Typical delivery 2–7 days depending on revisions and complexity.
+<section id="contact" class="container my-5" data-aos="fade-up">
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card p-3 bg-gradient shadow-lg text-white" style="background: linear-gradient(135deg,#6c5ce7,#00b4d8);">
+        <div class="card-body text-center">
+          <h4 class="fw-bold mb-3">Connect with me</h4>
+          <p class="mb-3">DM, email, or WhatsApp for quick replies!</p>
+          <div class="d-flex flex-wrap justify-content-center gap-2">
+            <a class="btn btn-light btn-sm hover-scale" href="https://www.instagram.com/mentoranshugarg" target="_blank"><i class="fab fa-instagram text-danger"></i> Instagram</a>
+            <a class="btn btn-light btn-sm hover-scale" href="https://www.facebook.com/share/19ejekqMQF/" target="_blank"><i class="fab fa-facebook text-primary"></i> Facebook</a>
+            <a class="btn btn-light btn-sm hover-scale" href="https://www.youtube.com/@flywithanshugarg" target="_blank"><i class="fab fa-youtube text-danger"></i> YouTube</a>
+            <a class="btn btn-success btn-sm hover-scale" href="https://wa.me/919756589698" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a class="btn btn-light btn-sm hover-scale" href="mailto:anshu@example.com"><i class="fas fa-envelope text-warning"></i> Email</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Social + Contact -->
-  <section id="contact" class="py-12">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-      <div class="bg-white rounded-xl p-6 shadow">
-        <h4 class="text-slate-900 font-bold text-xl">Connect with me</h4>
-        <p class="text-slate-600 mt-2">Quick links — DM or chat on WhatsApp for instant replies.</p>
-        <div class="flex gap-4 mt-4 flex-wrap">
-          <a class="flex items-center gap-3 p-3 rounded-lg border hover:shadow transition" href="https://www.instagram.com/mentoranshugarg" target="_blank">
-            <i class="fab fa-instagram text-2xl text-pink-600"></i> <span class="font-semibold">Instagram</span>
-          </a>
-          <a class="flex items-center gap-3 p-3 rounded-lg border hover:shadow transition" href="https://www.facebook.com/share/19ejekqMQF/" target="_blank">
-            <i class="fab fa-facebook text-2xl text-blue-600"></i> <span class="font-semibold">Facebook</span>
-          </a>
-          <a class="flex items-center gap-3 p-3 rounded-lg border hover:shadow transition" href="https://www.youtube.com/@flywithanshugarg" target="_blank">
-            <i class="fab fa-youtube text-2xl text-red-600"></i> <span class="font-semibold">YouTube</span>
-          </a>
-          <a class="flex items-center gap-3 p-3 rounded-lg border hover:shadow transition" href="https://wa.me/919756589698" target="_blank">
-            <i class="fab fa-whatsapp text-2xl text-green-600"></i> <span class="font-semibold">WhatsApp</span>
-          </a>
+    <div class="col-md-6">
+      <div class="card p-3 shadow hover-translate">
+        <div class="card-body text-center">
+          <h4>Let's talk</h4>
+          <p>Ready to start? Send a message on WhatsApp and I’ll reply ASAP.</p>
+          <a href="https://wa.me/918630136811" class="btn btn-success btn-lg">Chat on WhatsApp</a>
         </div>
       </div>
-
-      <div class="bg-white rounded-xl p-6 shadow text-slate-700">
-        <h4 class="font-bold text-xl">Let's talk</h4>
-        <p class="mt-2">Ready to start? Send a quick message on WhatsApp.</p>
-        <a href="https://wa.me/919756589698" target="_blank" class="inline-block mt-4 bg-green-500 text-white px-5 py-3 rounded-full font-semibold hover:bg-green-600 transition">Chat on WhatsApp</a>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/919756589698" target="_blank" class="fixed right-6 bottom-6 bg-green-500 p-4 rounded-full shadow-lg text-white z-50">
-    <i class="fab fa-whatsapp text-2xl"></i>
-  </a>
+<!-- Custom hover animations -->
+<style>
+.hover-scale:hover { transform: scale(1.1); transition: 0.3s; }
+.hover-translate:hover { transform: translateY(-5px); transition: 0.3s; }
+</style>
 
-  <!-- FOOTER -->
-  <footer class="mt-12 pb-8 text-center text-white/80">
-    <div class="max-w-7xl mx-auto px-6">
-      <small>© <span id="year"></span> Sky Reach Media • Built with ❤️</small>
-    </div>
-  </footer>
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/918630136811" class="position-fixed bottom-0 end-0 m-3" style="z-index:2000">
+  <div class="btn btn-success btn-lg rounded-circle shadow-lg" title="Message on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </div>
+</a>
 
-  <!-- SCRIPTS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script>
-    // set year
-    document.getElementById('year').textContent = new Date().getFullYear();
+<!-- FOOTER -->
+<footer class="mt-5 py-4 text-center">
+  <small class="text-muted-light">© <span id="year"></span> Sky Reach Media • Built with ❤️</small>
+</footer>
 
-    // mobile menu
-    document.getElementById('menu-btn').addEventListener('click', ()=> {
-      const m = document.getElementById('mobile-menu');
-      m.classList.toggle('hidden');
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script async src="https://www.instagram.com/embed.js"></script>
+<script>
+  AOS.init();
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.nextElementSibling.style.display = 
+        q.nextElementSibling.style.display === "block" ? "none" : "block";
     });
+  });
 
-    // thumbnail -> load into main player
-    const mainVideo = document.getElementById('mainVideo');
-    document.querySelectorAll('.thumb-button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const src = btn.getAttribute('data-src');
-        if(!src) return;
-        // replace source and play
-        const wasPlaying = !mainVideo.paused && !mainVideo.ended;
-        mainVideo.pause();
-        mainVideo.querySelectorAll('source').forEach(s => s.remove());
-        const newSource = document.createElement('source');
-        newSource.src = src;
-        newSource.type = 'video/mp4';
-        mainVideo.appendChild(newSource);
-        mainVideo.load();
-        // small visual feedback
-        document.querySelectorAll('.thumb-button').forEach(t => t.classList.remove('ring-4','ring-white','ring-opacity-40'));
-        btn.classList.add('ring-4','ring-white','ring-opacity-40');
-        if(wasPlaying) mainVideo.play();
-        // scroll thumb into view (mobile)
-        if(typeof btn.scrollIntoView === 'function') btn.scrollIntoView({behavior:'smooth', inline:'center'});
-      });
-    });
+  // Swiper
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1200: { slidesPerView: 3 }
+    }
+  });
 
-    // initialize main ring on first thumb
-    const firstThumb = document.querySelector('.thumb-button');
-    if(firstThumb) firstThumb.classList.add('ring-4','ring-white','ring-opacity-40');
+  // Process Instagram embeds
+  window.addEventListener("load", function() {
+    if (window.instgrm) window.instgrm.Embeds.process();
+  });
+</script>
 
-    // FAQ toggle
-    document.querySelectorAll('.faq-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const parent = q.closest('.faq-item');
-        const a = parent.querySelector('.faq-a');
-        const icon = q.querySelector('.fa-chevron-down');
-        const isOpen = a.style.maxHeight && a.style.maxHeight !== '0px';
-        document.querySelectorAll('.faq-a').forEach(el => { el.style.maxHeight = null; el.style.opacity = 0; el.closest('.faq-item')?.querySelector('.fa-chevron-down')?.classList.remove('rotate-180'); });
-        if(!isOpen){
-          a.style.maxHeight = a.scrollHeight + 'px';
-          a.style.opacity = 1;
-          icon.classList.add('rotate-180');
-        }
-      });
-    });
-
-    // Simple Swiper for testimonials
-    new Swiper('.testimonialSwiper', {
-      slidesPerView: 1,
-      spaceBetween: 16,
-      loop: true,
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
-    });
-  </script>
 </body>
 </html>
