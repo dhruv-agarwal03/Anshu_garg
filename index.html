@@ -12,69 +12,39 @@
   <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/42e6fcb5f8.js" crossorigin="anonymous"></script>
 
-  <!-- Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-
   <!-- AOS Animation -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
-    body {
-      background: #061021;
-      color: white;
-      padding-top: 70px;
-    }
-    .hero {
-      background: linear-gradient(135deg, #6c5ce7, #00b4d8);
-      border-radius: 12px;
-      padding: 60px 20px;
-      color: white;
-      text-align: center;
-    }
-    .about-img {
-      border-radius: 12px;
-      width: 100%;
-      max-width: 350px;
-    }
-    .swiper-slide video, 
-    .swiper-slide blockquote {
-      width: 100%;
-      max-height: 280px; /* smaller height */
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    .faq-question {
-      background: #0d1b2a;
-      color: #fff;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-    .faq-answer {
-      display: none;
-      padding: 10px;
-      color: #bbb;
-    }
+    body { background: #061021; color: white; padding-top: 70px; }
+    .hero { background: linear-gradient(135deg, #6c5ce7, #00b4d8); border-radius: 12px; padding: 60px 20px; color: white; text-align: center; }
+    .about-img { border-radius: 12px; width: 100%; max-width: 350px; }
+    .instagram-media { max-width: 100% !important; min-width: 280px !important; margin: auto; }
+    .hover-scale:hover { transform: scale(1.1); transition: 0.3s; }
+    .hover-translate:hover { transform: translateY(-5px); transition: 0.3s; }
+    .faq .accordion-button { background: #1e1e3f; color: white; }
+    .faq .accordion-body { background: #0f1020; color: #ccc; }
+    .service-card { background: #1e1e3f; border-radius: 12px; padding: 20px; text-align: center; transition: transform 0.3s; }
+    .service-card:hover { transform: translateY(-5px) scale(1.05); }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark shadow">
+<nav class="navbar fixed-top navbar-dark bg-dark shadow">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">Sky Reach Media</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#reels">Reels</a></li>
-        <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
-        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#reels">Reels</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#feedback">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#contact">Connect</a></li>
       </ul>
     </div>
   </div>
@@ -94,117 +64,152 @@
     </div>
     <div class="col-md-7" data-aos="fade-left">
       <h2 class="fw-bold">About Me</h2>
-      <p>
-        Hi, I’m <strong>Anshu Garg</strong>, founder of <em>Sky Reach Media</em>. I specialize in video editing, Instagram reel creation, 
-        and social media growth strategies. My passion is turning raw clips into powerful stories that engage and grow your audience.
-      </p>
+      <p>Hello 👋, I’m <span class="fw-bold text-blue-600">Anshu Garg</span>, working with <strong>Sky Reach Media</strong> as a Video Editor & Content Strategist. For 2+ years, I’ve helped creators grow with viral reels, professional edits, and brand-focused content strategies.</p>
+      <p>So far, I’ve mentored <strong>150+ women</strong>, many of whom created reels reaching millions of views. My vision is to empower creators to shine online ✨.</p>
       <a href="#contact" class="btn btn-warning">Work with Me</a>
     </div>
   </div>
 </section>
 
-<!-- REELS SLIDER -->
-<section id="reels" class="container my-5">
-  <h3 class="text-center mb-4">Instagram Reels Edited by Anshu</h3>
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DOFpOH2EeB4/" data-instgrm-version="14"></blockquote></div>
-      <div class="swiper-slide"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNFTijxJmXy/" data-instgrm-version="14"></blockquote></div>
-      <div class="swiper-slide"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DJ1KdEIJTiI/" data-instgrm-version="14"></blockquote></div>
-      <div class="swiper-slide"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DN5MIS6CTsl/" data-instgrm-version="14"></blockquote></div>
-      <div class="swiper-slide"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DLhtm23zHzT/" data-instgrm-version="14"></blockquote></div>
-    </div>
-    <div class="swiper-pagination"></div>
+<!-- SERVICES -->
+<section id="services" class="container my-5" data-aos="fade-up">
+  <h3 class="text-center mb-4">Services We Provide</h3>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-3 col-sm-6" data-aos="zoom-in"><div class="service-card">Thumbnail Design</div></div>
+    <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="100"><div class="service-card">Script Writing</div></div>
+    <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="200"><div class="service-card">Video Editing</div></div>
+    <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="300"><div class="service-card">Poster Design</div></div>
+    <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="400"><div class="service-card">Content Creation</div></div>
+    <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="500"><div class="service-card">Highlight Creation</div></div>
   </div>
 </section>
 
-<section id="feedback" class="container my-5">
-  <h3 class="text-center mb-4" data-aos="fade-up">Client Feedback</h3>
-  <div id="feedbackCarousel" class="carousel slide" data-bs-ride="carousel">
+<!-- INSTAGRAM REELS SLIDER -->
+<section id="reels" class="container my-5">
+  <h3 class="text-center mb-4" data-aos="fade-up">Instagram Reels Edited by Anshu</h3>
+  <div id="reelsCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <!-- Slide 1 -->
       <div class="carousel-item active">
-        <div class="row g-3">
+        <div class="row g-3 justify-content-center">
           <div class="col-md-4" data-aos="zoom-in">
-            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
-              <source src="feedback1.mp4" type="video/mp4">
-            </video>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DOFpOH2EeB4/" data-instgrm-version="14"></blockquote>
           </div>
           <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
-              <source src="feedback2.mp4" type="video/mp4">
-            </video>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNFTijxJmXy/" data-instgrm-version="14"></blockquote>
           </div>
           <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
-              <source src="feedback3.mp4" type="video/mp4">
-            </video>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DJ1KdEIJTiI/" data-instgrm-version="14"></blockquote>
           </div>
         </div>
       </div>
-      <!-- Slide 2 -->
       <div class="carousel-item">
-        <div class="row g-3">
+        <div class="row g-3 justify-content-center">
           <div class="col-md-4" data-aos="zoom-in">
-            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
-              <source src="feedback4.mp4" type="video/mp4">
-            </video>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DN5MIS6CTsl/" data-instgrm-version="14"></blockquote>
           </div>
           <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
-              <source src="feedback5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
-              <source src="feedback6.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="row g-3">
-          <div class="col-md-4" data-aos="zoom-in">
-            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
-              <source src="feedback7.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
-              <source src="feedback8.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-            <video class="w-100 rounded shadow-sm" style="height:200px;" controls>
-              <source src="feedback9.mp4" type="video/mp4">
-            </video>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DLhtm23zHzT/" data-instgrm-version="14"></blockquote>
           </div>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#reelsCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#reelsCarousel" data-bs-slide="next">
       <span class="carousel-control-next-icon"></span>
     </button>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="container my-5">
-  <h3 class="text-center mb-4">Frequently Asked Questions</h3>
-  <div class="faq-question">💡 What services do you offer?</div>
-  <div class="faq-answer">I offer video editing, Instagram reels, social media strategies, and content creation.</div>
-
-  <div class="faq-question">⏱️ How long does it take to edit a video?</div>
-  <div class="faq-answer">Depending on length and complexity, typically 1-3 days.</div>
-
-  <div class="faq-question">💰 What are your charges?</div>
-  <div class="faq-answer">Pricing depends on the project scope. DM me for a custom quote.</div>
+<!-- FEEDBACK VIDEOS SLIDER -->
+<section id="feedback" class="container my-5">
+  <h3 class="text-center mb-4" data-aos="fade-up">Client Feedback</h3>
+  <div id="feedbackCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row g-3">
+          <div class="col-md-4" data-aos="zoom-in"><video class="w-100 rounded shadow-sm" style="height:200px;" controls><source src="feedback1.mp4" type="video/mp4"></video></div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><video class="w-100 rounded shadow-sm" style="height:200px;" controls><source src="feedback2.mp4" type="video/mp4"></video></div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><video class="w-100 rounded shadow-sm" style="height:200px;" controls><source src="feedback3.mp4" type="video/mp4"></video></div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row g-3">
+          <div class="col-md-4" data-aos="zoom-in"><video class="w-100 rounded shadow-sm" style="height:200px;" controls><source src="feedback4.mp4" type="video/mp4"></video></div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><video class="w-100 rounded shadow-sm" style="height:200px;" controls><source src="feedback5.mp4" type="video/mp4"></video></div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><video class="w-100 rounded shadow-sm" style="height:200px;" controls><source src="feedback6.mp4" type="video/mp4"></video></div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row g-3">
+          <div class="col-md-4" data-aos="zoom-in"><video class="w-100 rounded shadow-sm" style="height:200px;" controls><source src="feedback7.mp4" type="video/mp4"></video></div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><video class="w-100 rounded shadow-sm" style="height:200px;" controls><source src="feedback8.mp4" type="video/mp4"></video></div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><video class="w-100 rounded shadow-sm" style="height:200px;" controls><source src="feedback9.mp4" type="video/mp4"></video></div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+    <button class="carousel-control-next" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+  </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="container my-5 faq" data-aos="fade-up">
+  <h3 class="text-center mb-4">FAQ</h3>
+  <div class="accordion" id="faqAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">How much do your services cost?</button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Pricing depends on project scope — reels start at X, packages for ongoing creators available. Contact for a custom quote.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">How long does delivery take?</button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Typical delivery 2–7 days depending on complexity and revisions.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">Do you provide revisions?</button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Yes, we provide revisions depending on the package. Minor tweaks are always included.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">Can you create content for other platforms?</button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Absolutely! We create content for Instagram, YouTube, TikTok, and other platforms.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">How do I send my footage?</button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">You can send your footage via Google Drive, Dropbox, or WhatsApp. We’ll provide instructions after confirming your order.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSix">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">Do you provide scriptwriting or content ideas?</button>
+      </h2>
+      <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Yes! Scriptwriting, content ideas, and captions are part of our content creation services.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT WITH ME -->
 <section id="contact" class="container my-5" data-aos="fade-up">
   <div class="row g-4">
     <div class="col-md-6">
@@ -216,7 +221,7 @@
             <a class="btn btn-light btn-sm hover-scale" href="https://www.instagram.com/mentoranshugarg" target="_blank"><i class="fab fa-instagram text-danger"></i> Instagram</a>
             <a class="btn btn-light btn-sm hover-scale" href="https://www.facebook.com/share/19ejekqMQF/" target="_blank"><i class="fab fa-facebook text-primary"></i> Facebook</a>
             <a class="btn btn-light btn-sm hover-scale" href="https://www.youtube.com/@flywithanshugarg" target="_blank"><i class="fab fa-youtube text-danger"></i> YouTube</a>
-            <a class="btn btn-success btn-sm hover-scale" href="https://wa.me/919756589698" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a class="btn btn-success btn-sm hover-scale" href="https://wa.me/918630136811" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             <a class="btn btn-light btn-sm hover-scale" href="mailto:anshu@example.com"><i class="fas fa-envelope text-warning"></i> Email</a>
           </div>
         </div>
@@ -234,12 +239,6 @@
   </div>
 </section>
 
-<!-- Custom hover animations -->
-<style>
-.hover-scale:hover { transform: scale(1.1); transition: 0.3s; }
-.hover-translate:hover { transform: translateY(-5px); transition: 0.3s; }
-</style>
-
 <!-- Floating WhatsApp -->
 <a href="https://wa.me/918630136811" class="position-fixed bottom-0 end-0 m-3" style="z-index:2000">
   <div class="btn btn-success btn-lg rounded-circle shadow-lg" title="Message on WhatsApp">
@@ -255,32 +254,10 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script async src="https://www.instagram.com/embed.js"></script>
 <script>
   AOS.init();
   document.getElementById("year").textContent = new Date().getFullYear();
-
-  // FAQ toggle
-  document.querySelectorAll('.faq-question').forEach(q => {
-    q.addEventListener('click', () => {
-      q.nextElementSibling.style.display = 
-        q.nextElementSibling.style.display === "block" ? "none" : "block";
-    });
-  });
-
-  // Swiper
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    pagination: { el: ".swiper-pagination", clickable: true },
-    breakpoints: {
-      768: { slidesPerView: 2 },
-      1200: { slidesPerView: 3 }
-    }
-  });
-
-  // Process Instagram embeds
   window.addEventListener("load", function() {
     if (window.instgrm) window.instgrm.Embeds.process();
   });
